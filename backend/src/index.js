@@ -16,7 +16,7 @@ const PORT = process.env.PORT;
 app.use(express.json());        // used to create JSON web token (JWT) to extract data from user in JSON format
 app.use(cookieParser());
 app.use(cors({
-    origin: "http://localhost:5175",
+    origin: "http://localhost:5173",
     credentials: true,
 }));
 
