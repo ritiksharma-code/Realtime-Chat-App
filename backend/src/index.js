@@ -7,9 +7,10 @@ import cors from "cors";
 
 import authRoutes from "./routes/auth.route.js";
 import messageRoutes from "./routes/message.route.js";
+import { app, server } from "./lib/socket.js";
 
 dotenv.config();
-const app  = express();
+// const app  = express();          // don't need this now, importing from socket.js
 
 const PORT = process.env.PORT;
 
@@ -23,7 +24,12 @@ app.use(cors({
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
 
-app.listen(PORT, () => {
+/* app.listen(PORT, () => {
+    console.log("Server is running on PORT: " + PORT);
+    connectDB();
+}); */
+
+server.listen(PORT, () => {
     console.log("Server is running on PORT: " + PORT);
     connectDB();
 });
