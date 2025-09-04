@@ -65,13 +65,13 @@ A modern, feature-rich realtime chat application built with the MERN stack (Mong
 ### Installation
 
 1. Clone the repository
-\`\`\`bash
+```bash
 git clone https://github.com/yourusername/Realtime-Chat-App.git
 cd Realtime-Chat-App
-\`\`\`
+```
 
 2. Install dependencies
-\`\`\`bash
+```bash
 # Install backend dependencies
 cd backend
 npm install
@@ -79,26 +79,26 @@ npm install
 # Install frontend dependencies
 cd ../frontend
 npm install
-\`\`\`
+```
 
 3. Environment Variables
 
 Create a .env file in the backend directory:
 
-\`\`\`env
-PORT=5001
+```env
+PORT=YOUR_PORT
 MONGODB_URI=your_mongodb_uri
 JWT_SECRET=your_jwt_secret
 NODE_ENV=development
 CLOUDINARY_CLOUD_NAME=your_cloud_name
 CLOUDINARY_API_KEY=your_api_key
 CLOUDINARY_API_SECRET=your_api_secret
-\`\`\`
+```
 
 4. Run the application
 
 Development mode:
-\`\`\`bash
+```bash
 # Run backend
 cd backend
 npm run dev
@@ -106,14 +106,14 @@ npm run dev
 # Run frontend (in a new terminal)
 cd frontend
 npm run dev
-\`\`\`
+```
 
 Production mode:
-\`\`\`bash
+```bash
 # Build and start
 npm run build
 npm start
-\`\`\`
+```
 
 ## Features in Detail
 
