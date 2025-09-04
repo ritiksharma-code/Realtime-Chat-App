@@ -19,10 +19,11 @@ const __dirname = path.resolve();
 
 app.use(express.json());        // used to create JSON web token (JWT) to extract data from user in JSON format
 app.use(cookieParser());
-app.use(cors({
-    origin: "http://localhost:5173",
+const corsOptions = {
+    origin: process.env.NODE_ENV === "production" ? "https://www.pingpal.site" : "http://localhost:5173",
     credentials: true,
-}));
+};
+app.use(cors(corsOptions));
 
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
