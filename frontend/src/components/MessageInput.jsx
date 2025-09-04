@@ -47,7 +47,7 @@ const MessageInput = () => {
   };
 
   return (
-    <div className='p-y w-full sticky bottom-0 z-10 bg-base-100'>
+    <div className="w-full bg-base-100 sticky bottom-0 left-0 z-20 px-4 py-3" style={{ boxShadow: "0 -2px 8px rgba(0,0,0,0.03)" }}>
       {imagePreview && (
         <div className="mb-3 flex items-center gap-2">
           <div className="relative">
@@ -58,8 +58,7 @@ const MessageInput = () => {
             />
             <button
               onClick={removeImage}
-              className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-base-300
-              flex items-center justify-center"
+              className="absolute -top-1.5 -right-1.5 w-5 h-5 rounded-full bg-base-300 flex items-center justify-center"
               type="button"
             >
               <X className="size-3" />
@@ -67,16 +66,15 @@ const MessageInput = () => {
           </div>
         </div>
       )}
-
-      <form onSubmit={handleSendMessage} className='flex items-center gap-2'>
-        <div className='flex-1 flex gap-2'>
-          <input type="text" className='w-full input input-bordered rounded-lg input-sm sm:input-md' placeholder='Type a message...' value={text} onChange={(e) => setText(e.target.value)} />
-          <input type="file" accept='image/*' className='hidden' ref={fileInputRef} onChange={handleImageChange} />
-          <button type='button' className={` sm:flex btn btn-circle ${imagePreview ? "text-emerald-500" : "text-zinc-400"}`} onClick={() => fileInputRef.current?.click()}>
+      <form onSubmit={handleSendMessage} className="flex items-center gap-2">
+        <div className="flex-1 flex gap-2">
+          <input type="text" className="w-full input input-bordered rounded-lg input-sm sm:input-md" placeholder="Type a message..." value={text} onChange={(e) => setText(e.target.value)} />
+          <input type="file" accept="image/*" className="hidden" ref={fileInputRef} onChange={handleImageChange} />
+          <button type="button" className={`sm:flex btn btn-circle ${imagePreview ? "text-emerald-500" : "text-zinc-400"}`} onClick={() => fileInputRef.current?.click()}>
             <Image size={20} />
           </button>
         </div>
-        <button type='submit' className='btn btn-sm btn-circle' disabled={!text.trim() && !imagePreview}>
+        <button type="submit" className="btn btn-sm btn-circle" disabled={!text.trim() && !imagePreview}>
           <Send size={22} />
         </button>
       </form>

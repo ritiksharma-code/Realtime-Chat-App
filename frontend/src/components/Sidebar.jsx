@@ -17,7 +17,7 @@ const Sidebar = () => {
 
   const filteredUsers = showOnlineOnly ? users.filter(user => onlineUsers.includes(user._id)) : users;
 
-  if (isUsersLoading) return <SidebarSkeleton />;
+  if (isUsersLoading) return <SidebarSkeleton />
 
   return (
     <aside className="h-full w-20 lg:w-72 border-r border-base-300 flex flex-col transition-all duration-200">
@@ -79,7 +79,7 @@ const Sidebar = () => {
               </div>
             </div>
           </button>
-        ))};
+        ))}
 
         {filteredUsers.length === 0 && (
           <div className="text-center text-zinc-500 py-4">No online users</div>
@@ -89,4 +89,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default Sidebar
